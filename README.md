@@ -1,6 +1,6 @@
 # Simple NFT Search
 
-Search NFTs by address (e.g. "0x0bEed7099AF7514cCEDF642CfEA435731176Fb02") or ENS name (e.g. "vitalik.eth").
+Search NFTs by address (e.g. *0x0bEed7099AF7514cCEDF642CfEA435731176Fb02*) or ENS name (e.g. *vitalik.eth*).
 
 -----
 
