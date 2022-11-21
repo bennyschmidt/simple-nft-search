@@ -1,0 +1,44 @@
+import { Network, Alchemy } from 'alchemy-sdk';
+
+const settings = {
+  apiKey: 'demo',
+  network: Network.ETH_MAINNET
+};
+
+const alchemy = new Alchemy(settings);
+
+const PAGE_SIZE = 10;
+
+export default async function searchNFTsByOwner (req, res) {
+  try {
+    const { ownerAddress } = req.body;
+
+    if (!ownerAddress || !/^([a-zA-Z0-9\.]){2,42}$/.test(ownerAddress)) {
+      res.status(400).json({
+        error: {
+          message: 'Invalid address.'
+        }
+      });
+
+      return;
+    }
+
+    const nftsForOwner = await alchemy.nft.getNftsForOwner(
+      ownerAddress,
+      {
+        pageSize: PAGE_SIZE
+      }
+    );
+
+    const result = Array.from(
+      nftsForOwner.ownedNfts.map(({ tokenId, contract }) => ({
+        tokenAddress: contract.address,
+        tokenId
+      }))
+    );
+
+    res.status(result ? 200 : 500).json(result || {});
+  } catch (error) {
+    res.status(500).json(error || {});
+  }
+}

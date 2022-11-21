@@ -15,12 +15,65 @@ a {
   box-sizing: border-box;
 }
 
+input,
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 60%;
+  font-size: 1.1em;
+  margin: .25rem;
+  background: #eee;
+  color: black;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: .8em;
+  font-style: italic;
+}
+
+button {
+  min-width: auto;
+  cursor: pointer;
+  background: black;
+  color: white;
+}
+
+button[disabled] {
+  opacity: .5;
+  cursor: wait;
+}
+
+@media (max-width: 900px) {
+  input,
+  button {
+    border-radius: 100vw;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
+
   body {
     color: white;
     background: black;
+  }
+
+  input,
+  button {
+    width: auto;
+    background: #222;
+    color: white;
+  }
+
+  button {
+    background: white;
+    color: black;
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "nft-search",
+  "name": "simple-nft-search",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "alchemy-sdk": "^2.2.3",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "next": "13.0.4",

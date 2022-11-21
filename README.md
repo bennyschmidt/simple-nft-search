@@ -1,3 +1,9 @@
+# Simple NFT Search
+
+Search NFTs by address (e.g. "0x0bEed7099AF7514cCEDF642CfEA435731176Fb02") or ENS name (e.g. "vitalik.eth").
+
+-----
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
