@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import {
   useState,
@@ -20,16 +21,26 @@ const TRENDING = [
 ];
 
 export default function Home () {
+  const router = useRouter();
   const [search, setSearch] = useState('');
   const [searchTimeout, setSearchTimeout] = useState();
   const [isSearching, setIsSearching] = useState(false);
   const [NFTs, setNFTs] = useState();
-
   const input = useRef(null);
 
+  const { query } = router;
+
   useEffect(() => {
+    setNFTs();
+    setSearch('');
     input.current.focus();
-  }, []);
+
+    if (query.search) {
+      fetchSearchResults(query.search);
+    }
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query]);
 
   const fetchSearchResults = async tag => {
     clearTimeout(searchTimeout);
@@ -86,6 +97,7 @@ export default function Home () {
   const onChangeSearch = ({
     nativeEvent: {
       keyCode,
+
       target: {
         value
       }
@@ -96,13 +108,17 @@ export default function Home () {
 
   const onKeyDownSearch = ({
     nativeEvent: {
+      keyCode,
+
       target,
-      keyCode
+      target: {
+        value
+      }
     }
   }) => {
     if (!isSearching && keyCode === 13) {
       target.blur();
-      fetchSearchResults();
+      router.push(`/?search=${value}`);
     }
   };
 
@@ -121,7 +137,9 @@ export default function Home () {
         <title>NFToogle</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.logo}>NFToogle</h1>
+      <Link href="/">
+        <h1 className={styles.logo}>NFToogle</h1>
+      </Link>
       <main className={styles.main}>
         <div className={NFTs ? styles.search : styles.spotlight}>
           <input
@@ -146,32 +164,40 @@ export default function Home () {
             tokenId,
             imageUrl
           }) => (
-            tokenAddress && tokenId && (<li
-              key={`${tokenAddress}/${tokenId}`}
-              className={styles.card}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={imageUrl}
-                alt={name}
-                width="100%"
-                height="100%"
-              />
-              <p>{name}</p>
-              <p>#{tokenId}</p>
-            </li>)
+            tokenAddress && tokenId && (
+              <li
+                key={`${tokenAddress}/${tokenId}`}
+                className={styles.card}
+              >
+                <Link
+
+                  href={`/nft?${new URLSearchParams({
+                    name,
+                    tokenAddress,
+                    tokenId,
+                    imageUrl
+                  }).toString()}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={imageUrl}
+                    alt={name}
+                    width="100%"
+                    height="100%"
+                  />
+                  <p>{name}</p>
+                  <p>#{tokenId}</p>
+                </Link>
+              </li>)
           ))}
         </ul>
         <h3>Trending</h3>
         <ul className={styles.taglist}>
           {
             TRENDING.map(li => (
-              <li
-                key={li}
-                onClick={onClickTag(li)}
-              >
-                {li}
-              </li>
+              <Link key={li} href={`/?search=${li}`}>
+                <li>{li}</li>
+              </Link>
             ))
           }
         </ul>

@@ -8,6 +8,7 @@
   left: 1.4rem;
   font-size: 1.4em;
   z-index: 10;
+  cursor: pointer;
 }
 
 .main {
@@ -47,6 +48,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 1rem;
+  max-width: 100%;
 }
 
 .card img {
@@ -114,6 +116,19 @@
 
 .search button {
   display: none;
+}
+
+.detail {
+  max-width: 75%;
+  line-break: anywhere;
+}
+
+.detail > img {
+  width: 100%;
+}
+
+.detail h3 span {
+  opacity: .5;
 }
 
 @media (max-width: 1200px) {
