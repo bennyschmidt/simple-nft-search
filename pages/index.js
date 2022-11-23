@@ -13,11 +13,9 @@ import styles from '../styles/Home.module.css';
 const API_TIMEOUT = 5000;
 
 const TRENDING = [
-  'yes.eth',
-  '0x0bEed7099AF7514cCEDF642CfEA435731176Fb02',
   'eumelaninc.eth',
-  '0xE6a451b2b47E054C8Cd37cDdaAB65acEea61F0cc',
-  '0xca973cF69C0fd8f410B542dB3d3Ac28bf8bF86fd'
+  '0x0bEed7099AF7514cCEDF642CfEA435731176Fb02',
+  '0x54196238400305778bFf5Fa200Ee1896f6A9d5C2'
 ];
 
 export default function Home () {
@@ -143,7 +141,7 @@ export default function Home () {
       <main className={styles.main}>
         <div className={NFTs ? styles.search : styles.spotlight}>
           <input
-            placeholder={`Try searching "0x0bEed7099AF7514cCEDF642CfEA435731176Fb02", "vitalik.eth", or "naval.eth"...`}
+            placeholder={`Try searching "0x0bEed7099AF7514cCEDF642CfEA435731176Fb02", or "naval.eth"...`}
             onChange={onChangeSearch}
             onKeyDown={onKeyDownSearch}
             value={search}
