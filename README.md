@@ -1,3 +1,5 @@
+Note: The demo URL shown here uses Alchemy's `test` key and is very easily rate-limited. When running this app locally, be sure to use your own key and you'll be able to see results.
+
 # Simple NFT Search
 
 Search NFTs by address (e.g. *0x0bEed7099AF7514cCEDF642CfEA435731176Fb02*) or ENS name (e.g. *vitalik.eth*).
