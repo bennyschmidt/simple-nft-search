@@ -1,4 +1,4 @@
-Note: The demo URL shown here uses Alchemy's `test` key and is very easily rate-limited. When running this app locally, be sure to use your own key and you'll be able to see results.
+**Note: The demo URL shown here uses Alchemy's `test` key and is very easily rate-limited. When running this app locally, be sure to use your own key and you'll be able to see results. Because I put a public URL in the description, it's pretty much always rate-limited.**
 
 # Simple NFT Search
 
