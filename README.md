@@ -10,6 +10,23 @@ Link to a specific result: https://nftoogle.vercel.app/nft?name=Be+a+Bee&tokenAd
 
 ![image](https://user-images.githubusercontent.com/45407493/218153436-10e2806d-9e9e-4f42-a432-f75a33c97246.png)
 
+# Dev Setup
+
+1. `API_KEY=`_<your [Alchemy API key](https://dashboard.alchemy.com/) here>_
+2. `npm i`
+
+### Run a local dev instance
+
+`npm run dev`
+
+### Build static files
+
+`npm run build`
+
+### Run the build
+
+`npm start`
+
 -----
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
