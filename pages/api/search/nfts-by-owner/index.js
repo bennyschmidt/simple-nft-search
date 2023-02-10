@@ -1,7 +1,7 @@
 import { Network, Alchemy } from 'alchemy-sdk';
 
 const settings = {
-  apiKey: 'demo',
+  apiKey: process.env.API_KEY,
   network: Network.ETH_MAINNET
 };
 
