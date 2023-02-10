@@ -15,7 +15,7 @@ const API_TIMEOUT = 5000;
 const TRENDING = [
   'eumelaninc.eth',
   '0x0bEed7099AF7514cCEDF642CfEA435731176Fb02',
-  '0x54196238400305778bFf5Fa200Ee1896f6A9d5C2'
+  '0xEe4d3F9Cc3311db533687bAb4E7198cdC9C8CBdB'
 ];
 
 export default function Home () {

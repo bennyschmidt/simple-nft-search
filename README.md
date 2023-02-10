@@ -1,8 +1,10 @@
-**Note: The demo URL shown here uses Alchemy's `test` key and is very easily rate-limited. When running this app locally, be sure to use your own key and you'll be able to see results. Because I put a public URL in the description, it's pretty much always rate-limited.**
-
 # Simple NFT Search
 
 Search NFTs by address (e.g. *0x0bEed7099AF7514cCEDF642CfEA435731176Fb02*) or ENS name (e.g. *vitalik.eth*).
+
+Search all by ENS: https://nftoogle.vercel.app/?search=eumelaninc.eth
+
+Link to a specific result: https://nftoogle.vercel.app/nft?name=Be+a+Bee&tokenAddress=0x495f947276749ce646f68ac8c248420045cb7b5e&tokenId=74200906326078283434529278345955196052332239189126191305460846805529248399361&imageUrl=https%3A%2F%2Flh3.googleusercontent.com%2Fv1VbSyOaM1m7w2t-xRLPlBP4N6LjQ10dBrIUqIGe6vWB5hpYWtTTHpR5j93g0xJOBYApCCiVDIe6skNwRCxG2ytTGiY0-O_a-vJnag
 
 -----
 

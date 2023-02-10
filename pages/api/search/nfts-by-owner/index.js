@@ -5,8 +5,6 @@ const settings = {
   network: Network.ETH_MAINNET
 };
 
-console.log(process.env)
-
 const alchemy = new Alchemy(settings);
 
 const PAGE_SIZE = 10;
@@ -38,8 +36,6 @@ export default async function searchNFTsByOwner (req, res) {
         tokenId
       }))
     );
-
-    console.log(result)
 
     res.status(result ? 200 : 500).json(result || {});
   } catch (error) {
